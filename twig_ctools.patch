@@ -1,0 +1,33 @@
+diff --git a/core/lib/Drupal/Core/Template/TwigNodeTrans.php b/core/lib/Drupal/Core/Template/TwigNodeTrans.php
+index c0691dbca6..aad9d0b069 100644
+--- a/core/lib/Drupal/Core/Template/TwigNodeTrans.php
++++ b/core/lib/Drupal/Core/Template/TwigNodeTrans.php
+@@ -2,6 +2,8 @@
+ 
+ namespace Drupal\Core\Template;
+ 
++use Twig\Node\CheckToStringNode;
++
+ /**
+  * A class that defines the Twig 'trans' tag for Drupal.
+  *
+@@ -113,6 +115,9 @@ protected function compileString(\Twig_Node $body) {
+             $n = $n->getNode('node');
+           }
+ 
++          if ($n instanceof CheckToStringNode) {
++            $n = $n->getNode('expr');
++          }
+           $args = $n;
+ 
+           // Support TwigExtension->renderVar() function in chain.
+@@ -134,6 +139,9 @@ protected function compileString(\Twig_Node $body) {
+             }
+             $args = $args->getNode('node');
+           }
++          if ($args instanceof CheckToStringNode) {
++            $args = $args->getNode('expr');
++          }
+           if ($args instanceof \Twig_Node_Expression_GetAttr) {
+             $argName = [];
+             // Reuse the incoming expression.
