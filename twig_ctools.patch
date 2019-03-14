@@ -1,7 +1,7 @@
-diff --git a/web/core/lib/Drupal/Core/Template/TwigNodeTrans.php b/core/lib/Drupal/Core/Template/TwigNodeTrans.php
+diff --git a/core/lib/Drupal/Core/Template/TwigNodeTrans.php b/core/lib/Drupal/Core/Template/TwigNodeTrans.php
 index c0691dbca6..aad9d0b069 100644
---- a/web/core/lib/Drupal/Core/Template/TwigNodeTrans.php
-+++ b/web/core/lib/Drupal/Core/Template/TwigNodeTrans.php
+--- a/core/lib/Drupal/Core/Template/TwigNodeTrans.php
++++ b/core/lib/Drupal/Core/Template/TwigNodeTrans.php
 @@ -2,6 +2,8 @@
  
  namespace Drupal\Core\Template;
